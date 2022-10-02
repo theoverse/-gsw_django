@@ -2,6 +2,9 @@ from django.db import models
 
 # Create your models here.
 class Product(models.Model):
+    def __str__(self):
+        # will return name attribute instead of 'Product object (1)' 
+        return self.name
     name = models.CharField(max_length=100)
     price = models.IntegerField()
     desc = models.CharField(max_length=200)
