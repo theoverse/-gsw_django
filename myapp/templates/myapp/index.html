@@ -1,9 +1,7 @@
+{% extends 'myapp/base.html' %}
 {% load static %}
-<html>
-    <head>
-        <link rel="stylesheet" href="{% static 'myapp/styles.css' %}">
-    </head>
-    <body>
+{% block body %}
+
         <nav class="bg-white shadow-lg">
             <div class="max-w-6xl mx-auto px-4">
                 <div class="fle justify-between">
@@ -29,5 +27,4 @@
                 {{product.name}} - {{product.price}} - {{product.desc}} <br />
             </a>
         {% endfor %}
-    </body>
-</html>
+{% endblock %}
