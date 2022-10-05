@@ -5,6 +5,7 @@
         {% for product in products %}
             <a href="{% url 'myapp:product_detail' product.id %}">
                 {{product.name}} - {{product.price}} - {{product.desc}} <br />
+                <img src="{{product.image.url}}" alt="">
             </a>
         {% endfor %}
 {% endblock %}
