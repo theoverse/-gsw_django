@@ -18,7 +18,7 @@ def products(request):
 def product_detail(request,id):
     product = Product.objects.get(id=id)
     context={
-        'product':product
+        'product':product,
     }
     return render(request,'myapp/detail.html',context)
 
@@ -31,3 +31,10 @@ def add_product(request):
         product = Product(name=name,price=price,desc=desc,image=image)
         product.save()
     return render(request, 'myapp/addproduct.html')
+
+def update_product(request,id):
+    product = Product.objects.get(id=id)
+    context = {
+        'product':product,
+    }
+    return render(request,'myapp/updateproduct.html',context)
